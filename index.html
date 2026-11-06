@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pallavi Apartment | Visitor Management</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">P</span><div><b>Pallavi</b><small>APARTMENTS</small></div></div>
+    <div class="nav-label">MAIN MENU</div>
+    <button class="nav active" data-view="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav" data-view="residents">♙ <span>Residents</span></button>
+    <button class="nav" data-view="visitors">♧ <span>Visitors</span></button>
+    <button class="nav" data-view="visits">◷ <span>Visit Records</span></button>
+    <div class="sidebar-bottom"><div class="online-dot"></div><span>System online</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">PALLAVI APARTMENTS</span><h1 id="pageTitle">Dashboard</h1></div><div class="profile"><div class="avatar">PA</div><div><b>Admin Panel</b><small>Management</small></div></div></header>
+    <section id="dashboard" class="view">
+      <div class="welcome"><div><span class="eyebrow light">WELCOME TO YOUR COMMUNITY</span><h2>Visitor management,<br>made simple.</h2><p>Keep your apartment safe, organised and connected.</p></div><img src="images/apartment-1.svg" alt="Modern apartment building"></div>
+      <div class="stats">
+        <article class="stat"><span class="stat-icon lavender">♙</span><small>Total Residents</small><strong id="residentCount">—</strong><em>Registered households</em></article>
+        <article class="stat"><span class="stat-icon peach">♧</span><small>Total Visitors</small><strong id="visitorCount">—</strong><em>Visitor profiles</em></article>
+        <article class="stat"><span class="stat-icon mint">◷</span><small>Currently Inside</small><strong id="insideCount">—</strong><em>Not checked out</em></article>
+        <article class="stat"><span class="stat-icon blue">▣</span><small>Today's Visits</small><strong id="todayCount">—</strong><em>Entries today</em></article>
+      </div>
+      <div class="feature-row"><div class="panel"><div class="panel-heading"><div><h3>Quick actions</h3><p>Manage your apartment at a glance</p></div></div><div class="quick-actions"><button class="quick" data-go="visitors"><span>＋</span><b>Register visitor</b><small>Add a new visitor profile</small></button><button class="quick" data-go="visits"><span>↗</span><b>Record a visit</b><small>Check in a visitor</small></button><button class="quick" data-go="residents"><span>♙</span><b>Residents</b><small>View resident directory</small></button></div></div><div class="building-card"><img src="images/apartment-2.svg" alt="Apartment community illustration"><div><b>A better way to welcome guests</b><small>Every visit, safely recorded.</small></div></div></div>
+      <div id="connection" class="connection">Checking database connection…</div>
+    </section>
+    <section id="residents" class="view hidden"><div class="panel"><div class="panel-heading"><div><h3>Resident directory</h3><p>Apartment residents and flat details</p></div></div><form id="residentForm" class="form-grid"><input name="name" placeholder="Resident name" required><input name="flat_no" placeholder="Flat number" required><input name="phone" placeholder="Phone number" required><input name="email" type="email" placeholder="Email address"><button class="primary">＋ Add resident</button></form><div class="table-wrap"><table><thead><tr><th>NAME</th><th>FLAT</th><th>PHONE</th><th>EMAIL</th><th>ACTIONS</th></tr></thead><tbody id="residentRows"></tbody></table></div></div></section>
+    <section id="visitors" class="view hidden"><div class="panel"><div class="panel-heading"><div><h3>Visitor register</h3><p>Register guests entering Pallavi Apartments</p></div></div><form id="visitorForm" class="form-grid"><input name="name" placeholder="Visitor name" required><input name="phone" placeholder="Phone number" required><input name="vehicle_no" placeholder="Vehicle number (optional)"><input name="purpose" placeholder="Purpose of visit" required><button class="primary">＋ Register visitor</button></form><div class="table-wrap"><table><thead><tr><th>VISITOR</th><th>PHONE</th><th>VEHICLE</th><th>PURPOSE</th><th>ACTIONS</th></tr></thead><tbody id="visitorRows"></tbody></table></div></div></section>
+    <section id="visits" class="view hidden"><div class="panel"><div class="panel-heading"><div><h3>Visit records</h3><p>Check in guests and track entry / exit times</p></div></div><form id="visitForm" class="form-grid"><select name="resident_id" id="residentSelect" required><option value="">Select resident</option></select><select name="visitor_id" id="visitorSelect" required><option value="">Select visitor</option></select><button class="primary">↗ Check in visitor</button></form><div class="table-wrap"><table><thead><tr><th>VISITOR</th><th>RESIDENT / FLAT</th><th>ENTRY</th><th>EXIT</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="visitRows"></tbody></table></div></div></section>
+    <footer>© 2026 Pallavi Apartments · Visitor Management System</footer>
+  </main>
+  <script src="js/app.js"></script>
+</body></html>
